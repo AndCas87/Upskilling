@@ -1,0 +1,8 @@
+{
+	"xsappname": "uaa_upskilling-rw",
+	"tenant-mode": "dedicated",
+	"scopes": [],
+	"authorities": [
+		"$ACCEPT_GRANTED_AUTHORITIES"
+	]
+}

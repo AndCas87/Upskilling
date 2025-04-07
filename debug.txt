@@ -1,0 +1,25 @@
+cf enable-ssh upskilling-srv
+cf restart upskilling-srv
+cf ssh upskilling-srv -N -T -L 8000:127.0.0.1:8000
+set debugging port 8000
+start debugging
+print debugging information
+
+---> inserire breakpoint nel file Java da debuggare
+---> nel menù del BAS sulla sinistra cliccare su "Debug"
+---> dal menu a tendina cliccare su "Add Configuration"
+---> nel nuovo menù che compare selezionare "Java"
+---> si apre automaticamente il file "launch.json"
+---> usa il comando "CTRL+SPACE" e selezionare "Attach to Remote Program"
+---> inserire il valore "port: 8000"
+---> inserire il valore "hostname: localHost"
+---> nel menù del BAS sulla sinistra e nella sezione "Debug" selezionare dal menu a tendina "Attach to Remote Program"
+---> cliccare sul tasto "Play"
+
+PER DISABILITARE DEBUG FILE JAVA
+---> nel menù del BAS sulla sinistra e nella sezione "Debug" e cliccare sul tasto "Stop"
+---DA CONSOLE---
+stop debugging
+---> usa il comando "CTRL+C" per tornare al terminale
+cf disable-ssh upskilling-srv
+cf restart upskilling-srv

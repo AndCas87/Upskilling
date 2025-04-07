@@ -1,0 +1,42 @@
+{
+  "xsappname": "upskilling-auth",
+  "tenant-mode": "dedicated",
+  "scopes": [
+    {
+      "name": "uaa.user",
+      "description": "UAA"
+    },
+    {
+      "name": "$XSAPPNAME.CORSO_RW_SC",
+      "description": "CORSO_RW_SC",
+      "grant-as-authority-to-apps": [
+        "$XSAPPNAME(application, uaa_upskilling-rw)"
+      ]
+    }
+  ],
+  "attributes": [],
+  "role-templates": [
+    {
+      "name": "Token_Exchange",
+      "description": "UAA",
+      "scope-references": [
+        "uaa.user"
+      ]
+    },
+    {
+      "name": "CORSO_RW_RT",
+      "description": "generated",
+      "scope-references": [
+        "$XSAPPNAME.CORSO_RW_SC"
+      ],
+      "attribute-references": []
+    }
+  ],
+  "oauth2-configuration": {
+    "redirect-uris": [
+      "http://*.localhost:4004/**",
+      "https://*.hana.ondemand.com/**",
+      "https://*.applicationstudio.cloud.sap/**"
+    ]
+  }
+}

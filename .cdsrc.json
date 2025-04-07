@@ -1,0 +1,14 @@
+{
+    "sql": {
+        "native_hana_associations": false
+    },
+    "requires": {
+        "db": "hana",
+        "destinations": true,
+        "connectivity": true,
+        "auth": "xsuaa"
+    },
+    "odata": {
+        "version": "v4"
+    }
+}
